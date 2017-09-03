@@ -1,0 +1,17 @@
+<?php
+/**
+* PHP-CS-Fixer Config.
+*
+* @author SignpostMarv
+*/
+declare(strict_types=1);
+
+namespace SignpostMarv\CS;
+
+return ConfigUsedWithPhpstanWithoutNullableReturn::createWithPaths(
+    __FILE__,
+    __DIR__ . '/phpunit-bootstrap.php',
+    (__DIR__ . DIRECTORY_SEPARATOR . 'src' . DIRECTORY_SEPARATOR),
+    (__DIR__ . DIRECTORY_SEPARATOR . 'easydb-src' . DIRECTORY_SEPARATOR),
+    (__DIR__ . DIRECTORY_SEPARATOR . 'easydb-tests' . DIRECTORY_SEPARATOR)
+);

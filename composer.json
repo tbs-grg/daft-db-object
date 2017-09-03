@@ -1,0 +1,49 @@
+{
+    "name": "signpostmarv/daft-db-object",
+    "description": "Daft Object with database repositories",
+    "type": "library",
+    "license": "ISC",
+    "authors": [
+        {
+            "name": "SignpostMarv",
+            "email": "me@signpostmarv.name"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "SignpostMarv\\DaftObject\\": "./src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SignpostMarv\\DaftObject\\": "./vendor/signpostmarv/daft-object/tests-src/",
+            "SignpostMarv\\DaftObject\\Tests\\": "./vendor/signpostmarv/daft-object/tests/",
+            "SignpostMarv\\DaftObject\\EasyDB\\": "./easydb-src/",
+            "SignpostMarv\\DaftObject\\EasyDB\\Tests\\": "./easydb-tests/"
+        }
+    },
+    "config": {
+        "classmap-authoritative": true,
+        "sort-packages": true
+    },
+    "scripts": {
+        "tests": [
+            "composer install",
+            "php ./vendor/phpunit/phpunit/phpunit",
+            "php ./vendor/phpstan/phpstan/bin/phpstan analyse -l5 .php_cs.dist src easydb-src easydb-tests",
+            "php ./vendor/vimeo/psalm/bin/psalm",
+            "php ./vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix --verbose --allow-risky=yes --dry-run"
+        ]
+    },
+    "require": {
+        "php": "^7.1",
+        "paragonie/easydb": "^2.3",
+        "signpostmarv/daft-object": "^0.2"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "dev-master",
+        "phpunit/phpunit": "^5.7",
+        "signpostmarv/php-cs-fixer-config": "^0.3.0",
+        "vimeo/psalm": "dev-master"
+    }
+}

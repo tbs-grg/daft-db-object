@@ -1,0 +1,17 @@
+build:
+  nodes:
+    php71:
+      environment:
+        php: 7.1
+  tests:
+    override:
+      -
+        command: 'vendor/bin/phpunit --coverage-clover=some-file'
+        coverage:
+          file: 'some-file'
+          format: 'clover'
+
+checks:
+  php:
+    code_rating: true
+    duplication: true
