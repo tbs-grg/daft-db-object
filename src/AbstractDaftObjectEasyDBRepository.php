@@ -44,10 +44,6 @@ abstract class AbstractDaftObjectEasyDBRepository extends DaftObjectMemoryReposi
         } elseif (($db instanceof EasyDB) === false) {
             throw new RuntimeException('Database connection not specified!');
         }
-        /**
-        * @var EasyDB $db
-        */
-        $db = $db;
 
         return new static($type, $db);
     }
@@ -100,8 +96,7 @@ abstract class AbstractDaftObjectEasyDBRepository extends DaftObjectMemoryReposi
     abstract protected function DaftObjectDatabaseTable() : string;
 
     protected function RememberDaftObjectData(
-        DefinesOwnIdPropertiesInterface $object,
-        bool $expectExists = false
+        DefinesOwnIdPropertiesInterface $object
     ) : void {
         $id = [];
 
