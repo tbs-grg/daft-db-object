@@ -3,10 +3,10 @@ build:
     analysis:
       environment:
         php: 7.1
-        project_setup:
-          override: true
-        tests:
-          override: [php-scrutinizer-run]
+      project_setup:
+        override: true
+      tests:
+        override: [php-scrutinizer-run]
 
 checks:
   php:
