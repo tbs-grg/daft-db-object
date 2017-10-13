@@ -64,6 +64,8 @@ abstract class AbstractDaftObjectEasyDBRepository extends DaftObjectMemoryReposi
     */
     public function RemoveDaftObjectById($id) : void
     {
+        $x = $this->foo();
+        var_dump($x);
         $id = array_values(is_array($id) ? $id : [$id]);
         $type = $this->type;
         $idkv = [];
