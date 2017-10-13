@@ -59,6 +59,8 @@ abstract class AbstractDaftObjectEasyDBRepository extends DaftObjectMemoryReposi
         throw new RuntimeException('Database connection not specified!');
     }
 
+    public function test($x) { echo $x; }
+
     /**
     * @param mixed $id
     */
@@ -66,9 +68,11 @@ abstract class AbstractDaftObjectEasyDBRepository extends DaftObjectMemoryReposi
     {
         $x = $this->foo();
         var_dump($x);
-        $x = $this->RemoveDaftObjectById(0)->bar();
+        $x = $this->RecallDaftObjectFromData(0)->bar();
         var_dump($x);
-        $this->RemoveDaftObjectById(0)->baz();
+        $this->RecallDaftObjectFromData(0)->baz();
+        oof();
+        test(rab());
         $id = array_values(is_array($id) ? $id : [$id]);
         $type = $this->type;
         $idkv = [];
