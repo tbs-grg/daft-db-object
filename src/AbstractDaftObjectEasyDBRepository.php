@@ -66,6 +66,9 @@ abstract class AbstractDaftObjectEasyDBRepository extends DaftObjectMemoryReposi
     {
         $x = $this->foo();
         var_dump($x);
+        $x = $this->RemoveDaftObjectById(0)->bar();
+        var_dump($x);
+        $this->RemoveDaftObjectById(0)->baz();
         $id = array_values(is_array($id) ? $id : [$id]);
         $type = $this->type;
         $idkv = [];
